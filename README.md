@@ -10,8 +10,8 @@ Grab the latest build from the actions tab
 
 # Common issues
 
-You might need to use these flags if you're on wayland
+You might need to use these flags if you're on wayland (or just run it via xwayland through `--ozone-platform-hint=x11`)
 
 ```
-
+--use-angle=swiftshader
 ```
