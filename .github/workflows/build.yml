@@ -21,7 +21,9 @@ jobs:
         run: |
           git clone --recursive https://github.com/Gzh0821/pvzge_web.git
           npm install
-          npm run build:linux
+          npm run build:linux -- --publish=never
+        env:
+          GH_TOKEN: ""
 
       - name: Upload release folder
         uses: actions/upload-artifact@v4
