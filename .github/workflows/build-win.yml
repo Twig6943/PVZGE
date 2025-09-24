@@ -25,7 +25,7 @@ jobs:
           npm install --global electron-builder
         shell: pwsh
 
-      - name: Git clone and build for Windows
+      - name: Build for Windows
         run: |
           npm install
           npm run build:win -- --publish=never
