@@ -10,7 +10,7 @@ Grab the latest build from the actions tab
 
 # Common issues
 
-You might need to use these flags if you're on wayland.
+You might need to use these flags if you're on wayland
 
 ```
 
