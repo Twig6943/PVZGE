@@ -9,6 +9,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          submodules: recursive
 
       - name: Install Node.js and npm
         run: |
@@ -19,7 +21,6 @@ jobs:
 
       - name: Git clone and build
         run: |
-          git clone --recursive https://github.com/Gzh0821/pvzge_web.git
           npm install
           npm run build:linux -- --publish=never
         env:
