@@ -1,0 +1,40 @@
+name: Build windows
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-electron:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install Node.js and npm via Chocolatey
+        run: |
+          choco install -y nodejs-lts
+          refreshenv
+          node -v
+          npm -v
+        shell: pwsh
+
+      - name: Install build tools
+        run: |
+          npm install --global electron-builder
+        shell: pwsh
+
+      - name: Git clone and build for Windows
+        run: |
+          npm install
+          npm run build:win -- --publish=never
+        shell: pwsh
+        env:
+          GH_TOKEN: ""
+
+      - name: Upload release folder
+        uses: actions/upload-artifact@v4
+        with:
+          name: pvzge-windows-release
+          path: release/
