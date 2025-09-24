@@ -8,5 +8,12 @@ This was made mostly for linux users to not download a docker container just to 
 
 Grab the latest build from the releases tab
 
+<div align="left">
+
 # Common issues
 
+You might need to use these flags if you're on wayland.
+
+```
+
+```
