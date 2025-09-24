@@ -9,7 +9,7 @@ function createWindow() {
     }
   });
 
-  win.loadFile('game/index.html');
+  win.loadFile('pvzg_site/docs/index.html');
   win.removeMenu(); // This hides the top menu bar (File, Edit, etc.)
 }
 
