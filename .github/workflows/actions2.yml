@@ -1,0 +1,26 @@
+name: Build electron
+
+on:
+  workflow_dispatch: # allows manual trigger
+
+jobs:
+  save-docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Git clone
+        run: git clone https://github.com/Gzh0821/pvzge_web.git
+
+      - name: Save Docker image as tar
+        run: docker save gaozih/pvzge:latest -o pvzge.tar
+
+      - name: Zip the image
+        run: zip pvzge.zip pvzge.tar
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: pvzge-docker-image
+          path: pvzge.zip
