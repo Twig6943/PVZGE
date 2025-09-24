@@ -15,8 +15,7 @@ jobs:
       - name: Install Node.js and npm via Homebrew
         run: |
           brew update
-          brew install node@lts
-          export PATH="/usr/local/opt/node@lts/bin:$PATH"
+          brew install node
           node -v
           npm -v
 
