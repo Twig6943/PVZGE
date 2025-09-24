@@ -8,10 +8,6 @@ Grab the latest build from the actions tab
 
 <div align="left">
 
-# Common issues
+# Warning: Please run the windows version with proton
 
-You might need to use these flags if you're on wayland (or just run it via xwayland through `--ozone-platform-hint=x11`)
-
-```
---use-angle=swiftshader
-```
+Chromium gpu acceleration is still experimental on linux (especially when using the wayland backend).
