@@ -17,7 +17,7 @@
     "appId": "com.gaozih.pvzge",
     "productName": "PvZ Gardendless",
     "files": [
-      "game/**/*",
+      "pvzge_web/docs/**/*",
       "main.js",
       "package.json"
     ],
