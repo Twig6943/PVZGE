@@ -22,7 +22,7 @@ jobs:
       - name: Git clone and build
         run: |
           npm install
-          npm run build:linux --publish=never
+          npm run build:linux -- --publish=never
         env:
           GH_TOKEN: ""
 
