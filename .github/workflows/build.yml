@@ -10,17 +10,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Git clone
-        run: git clone https://github.com/Gzh0821/pvzge_web.git
+      - name: Install Node.js and npm
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y nodejs npm
+          node -v
+          npm -v
 
-      - name: Save Docker image as tar
-        run: docker save gaozih/pvzge:latest -o pvzge.tar
+      - name: Git clone and build
+        run: |
+          git clone --recursive https://github.com/Gzh0821/pvzge_web.git
+          npm --prefix pvzge_web install
+          npm --prefix pvzge_web run build:linux
 
-      - name: Zip the image
-        run: zip pvzge.zip pvzge.tar
-
-      - name: Upload artifact
+      - name: Upload release folder
         uses: actions/upload-artifact@v4
         with:
-          name: pvzge-docker-image
-          path: pvzge.zip
+          name: pvzge-linux-release
+          path: pvzge_web/release
