@@ -14,4 +14,6 @@ Chromium webgl functionality highly experimental on linux/mac (especially when u
 
 If you're using wine wayland driver, you might need to start `--in-process-gpu` for it to start properly.
 
-<img src="/assets/1.webp" style="width: 10rem;">
+# Game running without XWayland, with gpu acceleration
+
+<img src="/assets/1.webp">
