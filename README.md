@@ -13,3 +13,5 @@ Grab the latest build from the actions tab
 Chromium webgl functionality highly experimental on linux/mac (especially when using the wayland backend). See [this issue](https://github.com/Gzh0821/pvzg_site/issues/85)
 
 If you're using wine wayland driver, you might need to start `--in-process-gpu` for it to start properly.
+
+<img src="/assets/1.webp" style="width: 10rem;">
