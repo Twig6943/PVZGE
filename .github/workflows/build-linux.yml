@@ -1,7 +1,12 @@
 name: Build linux
 
 on:
-  workflow_dispatch: # allows manual trigger
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: 'Release tag (e.g., v0.4.2)'
+        required: true
+        default: 'v0.0.1'
 
 jobs:
   build-electron:
@@ -19,15 +24,23 @@ jobs:
           node -v
           npm -v
 
+      - name: Install build tools
+        run: |
+          npm install --global electron-builder
+
       - name: Build
         run: |
           npm install
           npm run build:linux -- --publish=never
         env:
-          GH_TOKEN: ""
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Upload release folder
-        uses: actions/upload-artifact@v4
+      - name: Create GitHub Release with .AppImage
+        uses: softprops/action-gh-release@v1
         with:
-          name: pvzge-linux-release
-          path: release/
+          tag_name: ${{ github.event.inputs.release_tag }}
+          name: "pvzge Linux Release ${{ github.event.inputs.release_tag }}"
+          body: "Automated Linux release built via GitHub Actions."
+          files: release/*.AppImage
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
