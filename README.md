@@ -6,7 +6,7 @@
 
 This was made mostly for linux/mac users to not download a docker container just to play a game 🗣️🔥
 
-Grab the latest build from the actions tab
+Grab the latest build from the releases tab
 
 <div align="left">
 
