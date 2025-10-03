@@ -18,4 +18,10 @@ If you're using wine wayland driver, you might need to start the .exe with `--in
 
 # Game running without XWayland, with gpu acceleration
 
-<img src="/assets/1.webp">
+<img src="/assets/Showcase.webp">
+
+# Audio issue
+
+Sound effects tend to not work with default settings, open up settings and set `Audio Load Mode` to `DOM`
+
+<img src="assets/icons/AudioDom.webp">
