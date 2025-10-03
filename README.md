@@ -19,3 +19,5 @@ If you're using wine wayland driver, you might need to start the .exe with `--in
 # Game running without XWayland, with gpu acceleration
 
 <img src="/assets/1.webp">
+
+# FYI: You can repackage AppImage/Mac versions with [Asar Extractor](https://github.com/tylerlong/asar-extractor-app)
