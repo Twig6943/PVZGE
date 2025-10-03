@@ -20,6 +20,7 @@
     "productName": "PvZ Gardendless",
     "files": [
       "pvzge_web/docs/**/*",
+      "assets/icons/**",
       "main.js",
       "package.json"
     ],
@@ -28,13 +29,16 @@
     },
     "linux": {
       "target": "AppImage",
-      "category": "Game"
+      "category": "Game",
+      "icon": "assets/icons/icon.png"
     },
     "win": {
-      "target": "portable"
+      "target": "portable",
+      "icon": "assets/icons/icon.ico"
     },
     "mac": {
-      "target": "dmg"
+      "target": "dmg",
+      "icon": "assets/icons/icon.icns"
     }
   }
 }
