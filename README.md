@@ -24,4 +24,4 @@ If you're using wine wayland driver, you might need to start the .exe with `--in
 
 Sound effects tend to not work with default settings, open up settings and set `Audio Load Mode` to `DOM`
 
-<img src="assets/icons/AudioDom.webp">
+<img src="assets/icons/AudioDOM.webp">
