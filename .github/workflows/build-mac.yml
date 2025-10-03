@@ -2,6 +2,11 @@ name: Build mac
 
 on:
   workflow_dispatch:
+    inputs:
+      release_tag:
+        description: 'Release tag (e.g., v0.4.2)'
+        required: true
+        default: 'v0.0.1'
 
 jobs:
   build-electron:
@@ -28,10 +33,14 @@ jobs:
           npm install
           npm run build:mac -- --publish=never
         env:
-          GH_TOKEN: ""
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Upload release folder
-        uses: actions/upload-artifact@v4
+      - name: Create GitHub Release with .dmg
+        uses: softprops/action-gh-release@v1
         with:
-          name: pvzge-mac-release
-          path: release/
+          tag_name: ${{ github.event.inputs.release_tag }}
+          name: "pvzge macOS Release ${{ github.event.inputs.release_tag }}"
+          body: "Automated macOS release built via GitHub Actions."
+          files: release/*.dmg
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
