@@ -36,7 +36,7 @@ Inside the cloned repo:
 ## 5. Copy game files
 From your decompiled `.asar` contents:  
 - Go to `out/renderer`  
-- Copy everything from there into the `docs` folder you just made  
+- Move everything from there into the `docs` folder you just made  
 
 ---
 
